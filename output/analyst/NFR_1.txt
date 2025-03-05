@@ -1,0 +1,39 @@
+The Non-functional Requirements are:
+
+1. **[NFR-001]: Accessibility**
+
+   - The system will be accessible via any Internet-connected computer with a modern web browser.
+   
+   - [Related quality attribute(s)]: Usability, Accessibility
+
+2. **[NFR-002]: Compatibility**
+
+   - The system will not require any new hardware and will not depend on any other software.
+   
+   - [Related quality attribute(s)]: Compatibility, Portability
+
+3. **[NFR-003]: Security**
+
+   - The system will be secure, relying on modern web security standards.
+   
+   - [Related quality attribute(s)]: Security
+
+4. **[NFR-004]: Reliability**
+
+   - The system will be available via the S2S website, with reliability ensured through extensive testing.
+   
+   - [Related quality attribute(s)]: Reliability, Availability
+
+5. **[NFR-005]: Maintainability**
+
+   - Maintainability will be a primary goal, with the system designed for easy updates and modifications.
+   
+   - [Related quality attribute(s)]: Maintainability, Modifiability
+
+6. **[NFR-006]: Performance**
+
+   - The system will support single-user instances but will be accessible to multiple users over the Internet.
+   
+   - [Related quality attribute(s)]: Performance, Scalability
+
+These non-functional requirements ensure that the system is user-friendly, secure, reliable, and easy to maintain and update, while also being compatible with existing hardware and software environments.

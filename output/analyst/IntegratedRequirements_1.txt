@@ -1,0 +1,26 @@
+**Software Requirements Specification (SRS) for the "Space Fractions" System**
+
+1. The Space Fractions system is a web-based, interactive learning tool designed to improve fraction-solving skills for sixth-grade students.
+2. The system will provide feedback based on students' scores at the end of the session.
+3. The system will include a web-based menu (Math Umbrella) allowing users to choose between different educational systems related to fractions, decimals, and percents.
+4. The system will be accessible via any Internet-connected computer with a web browser that supports Flash movies.
+5. The system will not require any new hardware and will not depend on any other software.
+6. The system will feature an introductory movie to set up the storyline, which can be skipped by the user.
+7. The main menu will include a help section, a link to the Denominators' web page, and a brief team summary.
+8. The system will present a series of fraction questions in a storyline format, testing arithmetic, equivalence, graphical interpretation, and improper versus proper fraction skills.
+9. The system will provide a dynamic and adaptive storyline based on user progress and performance.
+10. The system will conclude with an ending scene where the user's score is calculated and ranked, offering an option to quit or try again.
+11. The system will allow an administrator to update fraction questions via a web-accessible Question Updater tool.
+12. The Question Updater will require a password for access and will feature a user-friendly interface for modifying questions.
+13. The system will process player inputs during gameplay for calculating spaceship velocity adjustments based on fraction inputs.
+14. The system will validate fraction inputs to ensure they are integers and that the denominator is not zero.
+15. The system will provide immediate feedback for invalid inputs, requesting a new input from the player.
+16. The system will offer a seamless transition from the introductory movie to the main menu, based on user interaction.
+17. The main menu will serve as the initial interface, offering options to start the game or access external educational resources.
+18. The system will engage players with multiple-choice questions integrated within a storyline, providing feedback and reinforcement.
+19. The system will offer a personalized ending scene based on the player's performance, with options to replay or exit.
+20. The Math Umbrella component will provide links to external educational resources, opening in a separate window.
+21. The system will support single-user instances but will be accessible to multiple users over the Internet.
+22. The system will be secure, relying on the security of the web browser used to access it.
+23. The system will be available via the S2S website, with reliability ensured through extensive testing.
+24. Maintainability will be a primary goal, with the system designed for easy updates and modifications.

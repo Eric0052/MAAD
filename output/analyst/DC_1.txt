@@ -1,0 +1,45 @@
+The Design Constraints are:
+
+1. **DC-001: Web-Based Platform**  
+   The system must be developed as a web-based application to ensure accessibility from any Internet-connected computer with a modern web browser.
+
+2. **DC-002: Modern Browser Compatibility**  
+   The system must be compatible with modern web browsers, avoiding outdated technologies like Flash, to ensure broad accessibility and security.
+
+3. **DC-003: No New Hardware Requirements**  
+   The system must not require any additional hardware beyond a standard Internet-connected computer.
+
+4. **DC-004: Standalone Software**  
+   The system must operate independently without relying on other software installations.
+
+5. **DC-005: User Interface Design**  
+   The system must feature a user-friendly interface, including a help section and links to external resources, to facilitate ease of use for sixth-grade students.
+
+6. **DC-006: Adaptive Storyline**  
+   The system must incorporate a dynamic and adaptive storyline that adjusts based on user progress and performance.
+
+7. **DC-007: Security Standards**  
+   The system must adhere to modern web security standards to protect user data and ensure secure access.
+
+8. **DC-008: Accessibility**  
+   The system should consider accessibility features to accommodate students with disabilities, ensuring inclusivity.
+
+9. **DC-009: Administrative Access**  
+   The Question Updater tool must be password-protected to restrict access to authorized administrators only.
+
+10. **DC-010: Input Validation**  
+    The system must validate user inputs to ensure they are integers and that the denominator is not zero, providing immediate feedback for invalid entries.
+
+11. **DC-011: Seamless Transitions**  
+    The system must provide seamless transitions between different sections, such as from the introductory movie to the main menu.
+
+12. **DC-012: Single-User Instance Support**  
+    The system must support single-user instances while being accessible to multiple users over the Internet.
+
+13. **DC-013: Maintainability**  
+    The system must be designed for easy updates and modifications to ensure long-term maintainability.
+
+14. **DC-014: Reliability Testing**  
+    The system must undergo extensive testing to ensure reliability and availability via the S2S website.
+
+These design constraints ensure that the system is developed in a way that meets the specified requirements while considering technical limitations and user needs.

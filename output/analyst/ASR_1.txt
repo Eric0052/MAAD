@@ -1,0 +1,45 @@
+The ASRs are:
+
+1. **ASR-001:**
+   - Original text of ASR1: The system will be accessible via any Internet-connected computer with a modern web browser.
+   - Related quality attribute(s): Usability, Accessibility
+   - Architectural Impact: The system must be designed to be compatible with various web browsers and platforms, ensuring cross-browser compatibility and responsive design.
+   - Related Components: User Interface, Web Server
+
+2. **ASR-002:**
+   - Original text of ASR2: The system will provide feedback based on students' scores at the end of the session.
+   - Related quality attribute(s): Usability, Feedback
+   - Architectural Impact: The architecture must support real-time data processing and feedback mechanisms to analyze and present user performance effectively.
+   - Related Components: Feedback Module, Data Processing Engine
+
+3. **ASR-003:**
+   - Original text of ASR3: The system will allow an administrator to update fraction questions via a web-accessible Question Updater tool.
+   - Related quality attribute(s): Maintainability, Modifiability
+   - Architectural Impact: The system must include a secure, user-friendly interface for administrators to update content, requiring a modular design to separate content management from core functionalities.
+   - Related Components: Admin Interface, Content Management System
+
+4. **ASR-004:**
+   - Original text of ASR4: The system will validate fraction inputs to ensure they are integers and that the denominator is not zero.
+   - Related quality attribute(s): Reliability, Data Integrity
+   - Architectural Impact: Input validation mechanisms must be integrated into the system to ensure data integrity and prevent errors during gameplay.
+   - Related Components: Input Validation Module, Game Logic
+
+5. **ASR-005:**
+   - Original text of ASR5: The system will be secure, relying on modern web security standards.
+   - Related quality attribute(s): Security, Reliability
+   - Architectural Impact: The architecture must incorporate security protocols and standards, such as HTTPS, secure authentication, and data encryption, to protect user data and system integrity.
+   - Related Components: Security Module, Authentication System
+
+6. **ASR-006:**
+   - Original text of ASR6: The system will provide a dynamic and adaptive storyline based on user progress and performance.
+   - Related quality attribute(s): Adaptability, User Experience
+   - Architectural Impact: The system must support adaptive content delivery, requiring a flexible architecture that can adjust the storyline based on real-time user data.
+   - Related Components: Storyline Engine, User Data Analytics
+
+7. **ASR-007:**
+   - Original text of ASR7: Maintainability will be a primary goal, with the system designed for easy updates and modifications.
+   - Related quality attribute(s): Maintainability, Modifiability
+   - Architectural Impact: The architecture should be modular and well-documented to facilitate easy updates and modifications without affecting the overall system stability.
+   - Related Components: Modular Design, Documentation System
+
+These ASRs highlight the critical architectural considerations necessary to ensure the system meets its quality attributes and functional requirements effectively.
