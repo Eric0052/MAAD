@@ -1,0 +1,124 @@
+To address the requirements and constraints provided, I will generate the architectural views using PlantUML syntax and outline the key architectural decisions made during the design process. Each view will focus on different aspects of the system architecture for the DigitalHome System.
+
+### 1. Logic View
+
+The logic view illustrates the primary functional modules of the system and their interactions.
+
+```plantuml
+@startuml
+package "DigitalHome System" {
+    [User Interface] --> [User Authentication]
+    [User Interface] --> [Device Management]
+    [User Interface] --> [Home Automation]
+    [User Interface] --> [Security and Surveillance]
+    [User Interface] --> [Energy Management]
+    [User Interface] --> [Notifications and Alerts]
+    [User Interface] --> [Data Privacy and Security]
+
+    [User Authentication] --> [Database Management System]
+    [Device Management] --> [Database Management System]
+    [Home Automation] --> [API Management]
+    [Security and Surveillance] --> [Database Management System]
+    [Energy Management] --> [Data Analytics Platform]
+    [Notifications and Alerts] --> [API Management]
+    [Data Privacy and Security] --> [Encryption Module]
+}
+@enduml
+```
+
+### 2. Process View
+
+The process view focuses on the dynamic aspects of the system, including concurrency and distribution.
+
+```plantuml
+@startuml
+actor User
+participant "Mobile App" as App
+participant "Web Interface" as Web
+participant "API Gateway" as API
+participant "Stream Processing Engine" as Stream
+participant "Database Cluster" as DB
+participant "Encryption Module" as Encrypt
+
+User -> App: Interact
+User -> Web: Interact
+App -> API: Send Request
+Web -> API: Send Request
+API -> Stream: Process Data
+Stream -> DB: Store Data
+API -> Encrypt: Encrypt Data
+Encrypt -> DB: Store Encrypted Data
+@enduml
+```
+
+### 3. Development View
+
+The development view illustrates the system from a programmer's perspective.
+
+```plantuml
+@startuml
+package "DigitalHome System" {
+    [Frontend Module] --> [Backend Module]
+    [Backend Module] --> [Database Module]
+    [Backend Module] --> [Encryption Module]
+    [Backend Module] --> [API Management Module]
+    [Backend Module] --> [Stream Processing Module]
+}
+@enduml
+```
+
+### 4. Physical View
+
+The physical view depicts the system's deployment on physical hardware.
+
+```plantuml
+@startuml
+node "User Device" {
+    [Mobile App]
+    [Web Interface]
+}
+
+node "Cloud Infrastructure" {
+    [API Gateway]
+    [Database Cluster]
+    [Stream Processing Engine]
+    [Encryption Module]
+    [Load Balancer]
+}
+@enduml
+```
+
+### 5. Scenario View
+
+The scenario view uses a use case to illustrate interactions.
+
+```plantuml
+@startuml
+actor User
+participant "Mobile App" as App
+participant "API Gateway" as API
+participant "Database Cluster" as DB
+participant "Encryption Module" as Encrypt
+
+User -> App: Login
+App -> API: Authenticate User
+API -> DB: Retrieve User Data
+DB -> API: Return User Data
+API -> Encrypt: Encrypt User Data
+Encrypt -> App: Return Encrypted Data
+@enduml
+```
+
+### 6. Architectural Decisions
+
+- **[Decision 1]:** Adopt a distributed architecture to support scalability and availability. This decision was made to meet the ASR-001 requirement for handling 100,000 concurrent requests per second, ensuring the system can scale horizontally and maintain high availability.
+
+- **[Decision 2]:** Implement ACID-compliant transaction management to ensure data integrity and consistency (ASR-002). This decision ensures that all transactions are reliable and consistent across the system.
+
+- **[Decision 3]:** Use encryption for data at rest and in transit to meet security requirements (ASR-004). This decision protects user data from unauthorized access and ensures compliance with data protection regulations.
+
+- **[Decision 4]:** Design a modular architecture with well-defined APIs for seamless integration with third-party services (ASR-005). This decision enhances the system's interoperability and flexibility.
+
+- **[Decision 5]:** Implement real-time data processing pipelines to support real-time analytics (ASR-006). This decision addresses the need for performance efficiency and responsiveness in data processing.
+
+These architectural decisions were made to align with the system's strategic goals and operational needs, ensuring that the architecture supports the required quality attributes and constraints.

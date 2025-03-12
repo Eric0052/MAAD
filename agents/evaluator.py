@@ -5,6 +5,8 @@ import asyncio
 from metagpt.logs import logger
 from metagpt.schema import Message
 import re
+import json
+import os
 
 class Evaluating(Action):
     #生成Mismatch report
@@ -53,7 +55,12 @@ class Evaluating(Action):
     ……
     """
     name: str = "Evaluating"
+    output_root : Path = Path("output//Designer")
 
+    @classmethod
+    def set_output_root(cls, output_root: Path):
+        cls.output_root = output_root    
+    
     async def run(self, verified_requirements: str, AV: str, UML: str):
         prompt1 = self.PROMPT_TEMPLATE1.format(verified_requirements=verified_requirements, UML=UML)    
         rsp = await self._aask(prompt1)
@@ -64,7 +71,7 @@ class Evaluating(Action):
         #计算mismatch的比例
         mismatch_rate = mismatch_count/requirement_count
         file_path = self.file_name("MAR")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
             #继续写入mismatch的数量和比例
             f.write(f"\nMismatch count: {mismatch_count}")
@@ -73,40 +80,35 @@ class Evaluating(Action):
         prompt2 = self.PROMPT_TEMPLATE2.format(verified_requirements=verified_requirements, UML=UML)  
         rsp = await self._aask(prompt2)
         file_path = self.file_name("ATAM")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
         prompt3 = self.PROMPT_TEMPLATE3.format(verified_requirements=verified_requirements, AV=AV)  
         rsp = await self._aask(prompt3)
         file_path = self.file_name("RS")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
     
-    @staticmethod
-    def file_name(name : str) -> str:
-        output_dir = Path("output//Evaluator")
+    @classmethod
+    def file_name(cls, name : str) -> str:
+        output_dir = cls.output_root
         output_dir.mkdir(parents=True, exist_ok=True)
         # 查找现有文件并生成新的文件名
         if name == "MAR":
-            existing_files = list(output_dir.glob("MAR_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"MAR_{file_index}.txt"
+            file_name = f"MAR.txt"
             file_path = output_dir / file_name
         elif name == "ATAM":
-            existing_files = list(output_dir.glob("ATAM_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"ATAM_{file_index}.txt"
+            file_name = f"ATAM.txt"
             file_path = output_dir / file_name
         elif name == "RS":
-            existing_files = list(output_dir.glob("RS_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"RS_{file_index}.txt"
+            file_name = f"RS.txt"
             file_path = output_dir / file_name
         return file_path
 
     #读取VR_1.txt中requirement的数量
-    @staticmethod
-    def count_requirement():
-        with open("C:\\Research\\MAAD\\demo\\demo_v2\\output\\Analyst\\VR_1.txt") as f:
+    @classmethod
+    def count_requirement(cls):
+        file_name = os.path.normpath(cls.output_root).split(os.sep)[1]
+        with open("C:\\Research\\MAAD\\demo\\demo_v2\\output\\" + file_name + "\\Analyst\\VR.txt") as f:
             content = f.read()
         requirements = re.findall(r'^\d+\.', content, re.MULTILINE)
         return len(requirements)
@@ -135,17 +137,24 @@ class Evaluator(Role):
         await todo.run(json_dict["requirement"], json_dict["AV"], json_dict["UML"])
 
 async def main():
+    with open("config.json", "r") as f:
+        config = json.load(f)
+    input_file = config["input_file"]
+    file_name = os.path.basename(input_file).split(".")[0]
+    output_root = Path("output//" + file_name.split(".")[0] + "//Evaluator")
+    Evaluating.set_output_root(output_root)
     #从output文件夹中读取ASR,FR,NFR,DCPR
-    with open(".\\requirement_document\\SFS.txt") as f:
+    #读取需求文档
+    with open(input_file, "r", encoding='utf-8') as f:
         requirement = f.read()
-    with open(".\\output\\Modeler\\AV_1.txt") as f:
+    with open(".\\output\\" + file_name.split(".")[0] + "\\Modeler\\AV.txt") as f:
         AV = f.read()
-    with open(".\\output\\Designer\\UML_1.txt") as f:
+    with open(".\\output\\" + file_name.split(".")[0] + "\\Designer\\UML.txt") as f:
         UML = f.read()
     #把这些信息放在一个json中
-    json = {"requirement":requirement, "AV":AV, "UML":UML}
+    json_msg = {"requirement":requirement, "AV":AV, "UML":UML}
     #json转字符串
-    json_str = str(json)
+    json_str = str(json_msg)
     role = Evaluator()
     result = await role.run(json_str)
     logger.info(result)

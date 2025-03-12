@@ -1,0 +1,19 @@
+The Non-functional Requirements are:
+
+1. **NR-001**:
+
+   - The APAF data system is not required to operate in more than one state or mode.
+
+   - Related quality attribute(s): Simplicity, Maintainability
+
+2. **NR-002**:
+
+   - The APAF data system will not impose hazards to personnel, property, or the environment.
+
+   - Related quality attribute(s): Safety, Reliability
+
+3. **NR-003**:
+
+   - The APAF Operations Procedures Document shall provide installation and operations procedures in enough detail to eliminate the need for training-related requirements.
+
+   - Related quality attribute(s): Usability, Efficiency

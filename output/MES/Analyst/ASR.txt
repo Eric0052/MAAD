@@ -1,0 +1,45 @@
+The ASRs are:
+
+1. **ASR-001:**
+   - Original text of ASR1: The APAF system shall acquire telemetry data of the ASPERA-3 Experiment and Mars Express Orbit/Attitude from ESOC and automatically process the data on a daily basis. (FR-001)
+   - Related quality attribute(s): Performance, Reliability
+   - Architectural Impact: Requires a robust data acquisition and processing pipeline to ensure timely and reliable data handling.
+   - Related Components: Data Acquisition Module, Processing Engine
+
+2. **ASR-002:**
+   - Original text of ASR2: The APAF system shall process all ASPERA-3 science data into Instrument Data File Sets (IDFS). (FR-002)
+   - Related quality attribute(s): Data Integrity, Performance
+   - Architectural Impact: Necessitates a data processing architecture capable of handling large volumes of scientific data efficiently.
+   - Related Components: Data Processing Module, Storage System
+
+3. **ASR-003:**
+   - Original text of ASR3: Web-based displays defined by the ASPERA-3 team shall be provided for science analysis and shall be password protected until the data is made public. (FR-009)
+   - Related quality attribute(s): Security, Usability
+   - Architectural Impact: Requires secure web application architecture with user authentication and authorization mechanisms.
+   - Related Components: Web Server, Authentication Service
+
+4. **ASR-004:**
+   - Original text of ASR4: The APAF ground data system shall have built-in error handling for better data integrity. (FR-010)
+   - Related quality attribute(s): Reliability, Maintainability
+   - Architectural Impact: Necessitates the integration of error detection and recovery mechanisms within the system architecture.
+   - Related Components: Error Handling Module, Logging System
+
+5. **ASR-005:**
+   - Original text of ASR5: ASPERA-3 and MEX OA IDFS data and any APAF-generated intermediate files of cleaned-up telemetry shall be provided to all ASPERA-3 Co-Investigators (Co-I's) within 24 hours of acquiring telemetry, given error-free transmission and processing. (FR-011, DR-001, DR-002, DR-003)
+   - Related quality attribute(s): Timeliness, Availability
+   - Architectural Impact: Requires a high-availability architecture with efficient data distribution mechanisms.
+   - Related Components: Data Distribution Network, Co-Investigator Access Portal
+
+6. **ASR-006:**
+   - Original text of ASR6: IDFS data access software and science analysis software developed by SwRI shall be made available to the ASPERA-3 Co-I's and integrated into the NASA-approved data repository. (FR-012, FR-013, DR-007, DR-008)
+   - Related quality attribute(s): Interoperability, Maintainability
+   - Architectural Impact: Requires a modular software architecture to facilitate integration with external repositories.
+   - Related Components: Software Integration Layer, NASA Data Repository Interface
+
+7. **ASR-007:**
+   - Original text of ASR7: ASPERA-3 IDFS data and MEX OA IDFS data shall be provided to NASA PDS in PDS-compliant form, calibrated and validated prior to depositing, and no later than 6 months after acquisition. (DR-004, DR-005, DR-006)
+   - Related quality attribute(s): Compliance, Data Integrity
+   - Architectural Impact: Requires a compliance-focused architecture with data validation and calibration capabilities.
+   - Related Components: Data Calibration Module, Compliance Verification System
+
+These ASRs highlight the critical architectural considerations necessary to meet the system's quality attributes and operational requirements.

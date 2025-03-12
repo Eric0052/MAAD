@@ -1,0 +1,21 @@
+To summarize the Non-functional Requirements (NFR) from the provided software requirements specification, we need to identify and extract the NFRs from the document. However, the provided text does not explicitly list any NFRs or their details. Typically, NFRs relate to system attributes such as performance, usability, reliability, etc., and are often found in sections of a specification that discuss system constraints or quality attributes.
+
+Since the text provided does not include specific NFRs, I will guide you on how to identify and structure them if they were present:
+
+"The Non-functional Requirements are:
+
+1. [NFR-001]:
+
+   - [Original text of NFR-001]
+
+   - [Related quality attribute(s)]
+
+2. [NFR-002]:
+
+   - [Original text of NFR-002]
+
+   - [Related quality attribute(s)]
+
+..."
+
+To proceed, you would need to review the full software requirements specification document to locate sections that discuss system performance, security, usability, reliability, maintainability, scalability, and other quality attributes. Once identified, you can list them in the format above. If you have access to the full document and can provide more details, I can assist further in identifying and summarizing the NFRs.

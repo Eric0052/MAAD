@@ -1,0 +1,156 @@
+To address the provided requirements and constraints, I will generate the architectural views using PlantUML syntax. Each view will be structured to reflect the specific aspects of the system architecture as described in the requirements.
+
+### 1. [Logic View]
+
+The logic view illustrates the primary functional modules of the system and their interactions.
+
+```plantuml
+@startuml
+package "APAF System" {
+    [Data Acquisition Module] --> [Processing Engine]
+    [Processing Engine] --> [Data Processing Module]
+    [Data Processing Module] --> [Storage System]
+    [Storage System] --> [Web Server]
+    [Web Server] --> [Authentication Service]
+    [Error Handling Module] --> [Logging System]
+    [Data Distribution Network] --> [Co-Investigator Access Portal]
+    [Software Integration Layer] --> [NASA Data Repository Interface]
+    [Data Calibration Module] --> [Compliance Verification System]
+}
+@enduml
+```
+
+### 2. [Process View]
+
+The process view focuses on the dynamic aspects of the system, including concurrency and distribution.
+
+```plantuml
+@startuml
+actor ESOC
+actor "ASPERA-3 Team" as Team
+actor "Co-Investigators" as CoI
+actor "NASA PDS" as PDS
+
+ESOC -> [Data Acquisition Module] : Acquire Telemetry Data
+[Data Acquisition Module] -> [Processing Engine] : Process Data Daily
+[Processing Engine] -> [Data Processing Module] : Process Science Data
+[Data Processing Module] -> [Storage System] : Store Data
+[Storage System] -> [Web Server] : Provide Web-Based Displays
+Team -> [Web Server] : Access Science Analysis Displays
+CoI -> [Co-Investigator Access Portal] : Access Data
+[Data Processing Module] -> [Data Distribution Network] : Distribute Data
+[Data Processing Module] -> [Data Calibration Module] : Calibrate Data
+[Data Calibration Module] -> PDS : Provide PDS-Compliant Data
+@enduml
+```
+
+### 3. [Development View]
+
+The development view illustrates the system from a programmer's perspective.
+
+```plantuml
+@startuml
+package "Development View" {
+    component "Data Acquisition Module" {
+        [Telemetry Acquisition]
+        [Data Preprocessing]
+    }
+    component "Processing Engine" {
+        [Data Transformation]
+        [Data Validation]
+    }
+    component "Data Processing Module" {
+        [IDFS Generation]
+        [Data Analysis]
+    }
+    component "Storage System" {
+        [Local Archive]
+        [Data Backup]
+    }
+    component "Web Server" {
+        [Public Display]
+        [Restricted Access]
+    }
+    component "Authentication Service" {
+        [User Authentication]
+        [Access Control]
+    }
+    component "Error Handling Module" {
+        [Error Detection]
+        [Error Recovery]
+    }
+    component "Data Distribution Network" {
+        [Data Delivery]
+        [Network Management]
+    }
+    component "Software Integration Layer" {
+        [Repository Integration]
+        [API Management]
+    }
+    component "Data Calibration Module" {
+        [Calibration Algorithms]
+        [Validation Checks]
+    }
+    component "Compliance Verification System" {
+        [Compliance Checks]
+        [Reporting]
+    }
+}
+@enduml
+```
+
+### 4. [Physical View]
+
+The physical view depicts the system from a system engineer's perspective.
+
+```plantuml
+@startuml
+node "SwRI Data Center" {
+    [Data Acquisition Module]
+    [Processing Engine]
+    [Data Processing Module]
+    [Storage System]
+    [Web Server]
+    [Authentication Service]
+    [Error Handling Module]
+    [Data Distribution Network]
+    [Software Integration Layer]
+    [Data Calibration Module]
+    [Compliance Verification System]
+}
+@enduml
+```
+
+### 5. [Scenario View]
+
+The scenario view illustrates a use case scenario.
+
+```plantuml
+@startuml
+actor ESOC
+actor "ASPERA-3 Team" as Team
+actor "Co-Investigators" as CoI
+
+ESOC -> [Data Acquisition Module] : Acquire Telemetry Data
+[Data Acquisition Module] -> [Processing Engine] : Process Data
+[Processing Engine] -> [Data Processing Module] : Generate IDFS
+[Data Processing Module] -> [Storage System] : Store Data
+[Storage System] -> [Web Server] : Display Data
+Team -> [Web Server] : Access Science Analysis
+CoI -> [Co-Investigator Access Portal] : Retrieve Data
+@enduml
+```
+
+### 6. [Architectural Decisions]
+
+- **[Decision 1]:** Use a modular architecture to facilitate integration with external systems and repositories. This decision supports interoperability and maintainability, aligning with ASR-006 and DC-001.
+  
+- **[Decision 2]:** Implement a robust data acquisition and processing pipeline to ensure performance and reliability, as required by ASR-001 and DC-002. This decision ensures timely and reliable data handling.
+
+- **[Decision 3]:** Incorporate secure web application architecture with user authentication to protect sensitive data, as specified in ASR-003 and DC-007. This decision addresses security and privacy concerns.
+
+- **[Decision 4]:** Design the system to comply with NASA's data repository standards, ensuring data is calibrated and validated, as required by ASR-007 and DC-009. This decision ensures compliance and data integrity.
+
+- **[Decision 5]:** Include built-in error handling mechanisms to maintain data integrity, as specified in ASR-004 and DC-005. This decision enhances reliability and maintainability.
+
+These architectural decisions were made to ensure the system meets the specified requirements while adhering to operational, security, and compliance standards.

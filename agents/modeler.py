@@ -4,6 +4,8 @@ from metagpt.roles import Role
 import asyncio
 from metagpt.logs import logger
 from metagpt.schema import Message
+import json
+import os
 
 class Modeling(Action):
     #architectural documentation
@@ -64,43 +66,43 @@ class Modeling(Action):
     """
     name: str = "Modeling"
 
-    async def run(self, ASR: str, FR: str, NFR: str, DC: str):
+    output_root : Path = Path("output//Modeler")
 
+    #根据json文件中的配置信息，生成对应的文件名
+    @classmethod
+    def set_output_root(cls, output_root: Path):
+        cls.output_root = output_root
+
+    async def run(self, ASR: str, FR: str, NFR: str, DC: str):
         prompt1 = self.PROMPT_TEMPLATE1.format(ASR = ASR, FR = FR, NFR = NFR, DC = DC)  
         rsp = await self._aask(prompt1)
         file_path = self.file_name("AD")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
         prompt2 = self.PROMPT_TEMPLATE2.format(ASR = ASR, FR = FR, NFR = NFR, DC = DC) 
         rsp = await self._aask(prompt2)
         file_path = self.file_name("AV")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
         prompt3 = self.PROMPT_TEMPLATE3.format(ASR = ASR, FR = FR, NFR = NFR, DC = DC) 
         rsp = await self._aask(prompt3)
         file_path = self.file_name("AD_AV")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
     
-    @staticmethod
-    def file_name(name : str) -> str:
-        output_dir = Path("output//Modeler")
+    @classmethod
+    def file_name(cls, name : str) -> str:
+        output_dir = cls.output_root
         output_dir.mkdir(parents=True, exist_ok=True)
         # 查找现有文件并生成新的文件名
         if name == "AD":
-            existing_files = list(output_dir.glob("AD_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"AD_{file_index}.txt"
+            file_name = f"AD.txt"
             file_path = output_dir / file_name
         elif name == "AV":
-            existing_files = list(output_dir.glob("AV_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"AV_{file_index}.txt"
+            file_name = f"AV.txt"
             file_path = output_dir / file_name
         elif name == "AD_AV":
-            existing_files = list(output_dir.glob("LV_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"AD_AV_{file_index}.txt"
+            file_name = f"AD_AV.txt"
             file_path = output_dir / file_name
         return file_path
 
@@ -116,26 +118,31 @@ class Modeler(Role):
         logger.info(f"{self._setting}: to do {self.rc.todo}({self.rc.todo.name})")
         todo = self.rc.todo  # todo will be SimpleWriteCode()
         msg = self.get_memories(k=1)[0]  # find the most recent messages
-        # #打印msg类型
-        # logger.info(msg)
-        #json字符串转dict
         json_dict = eval(msg.content)
         await todo.run(json_dict["ASR"], json_dict["FR"], json_dict["NFR"], json_dict["DC"])
 
 async def main():
+    #从config.json中读取需求文档
+    with open("config.json", "r") as f:
+        config = json.load(f)
+    input_file = config["input_file"]
+    file_name = os.path.basename(input_file).split(".")[0]
+    output_root = Path("output//" + file_name.split(".")[0] + "//Modeler")
+    Modeling.set_output_root(output_root)
     #从output文件夹中读取ASR,FR,NFR,DC
-    with open(".\\output\\Analyst\\ASR_1.txt") as f:
+    path = ".\\output" + "\\" + file_name + "\\Analyst"
+    with open(path+"\\ASR.txt") as f:
         ASR = f.read()
-    with open(".\\output\\Analyst\\FR_1.txt") as f:
+    with open(path + "\\FR.txt") as f:
         FR = f.read()
-    with open(".\\output\\Analyst\\NFR_1.txt") as f:
+    with open(path + "\\NFR.txt") as f:
         NFR = f.read()
-    with open(".\\output\\Analyst\\DC_1.txt") as f:
+    with open(path + "\\DC.txt") as f:
         DC = f.read()
     #把这些信息放在一个json中
-    json = {"ASR":ASR, "FR":FR, "NFR":NFR, "DC":DC}
+    json_mag = {"ASR":ASR, "FR":FR, "NFR":NFR, "DC":DC}
     #json转字符串
-    json_str = str(json)
+    json_str = str(json_mag)
     role = Modeler()
     result = await role.run(json_str)
     logger.info(result)

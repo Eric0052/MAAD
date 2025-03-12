@@ -1,0 +1,57 @@
+The Design Constraints are:
+
+1. **DC-001: Consistent User Interface**  
+   CCTNS must employ a consistent user interface for a familiar look and feel across all modules and functionalities.
+
+2. **DC-002: Role-Based Access Control**  
+   CCTNS must implement role-based access control to ensure that users have access only to the functionalities and data necessary for their roles.
+
+3. **DC-003: Audit Trail Integrity**  
+   The audit trail must be unalterable and capable of capturing all actions on critical entities, ensuring data integrity and accountability.
+
+4. **DC-004: Scalability**  
+   CCTNS must be scalable to accommodate varying sizes of police stations and fluctuating numbers of cases, ensuring performance under different loads.
+
+5. **DC-005: Multilingual Support**  
+   CCTNS must support multilingual interfaces to cater to diverse linguistic needs across different regions.
+
+6. **DC-006: Security Standards Compliance**  
+   CCTNS must comply with security standards, including SSL encryption, secure VPN connections, and protection against cross-site scripting and SQL injection.
+
+7. **DC-007: Service Oriented Architecture (SOA)**  
+   CCTNS must be developed using a Service Oriented Architecture to ensure modularity and ease of integration with other systems.
+
+8. **DC-008: Open Standards**  
+   CCTNS must be developed on open standards to ensure interoperability and future-proofing against technological changes.
+
+9. **DC-009: Browser Compatibility**  
+   CCTNS must be accessible through multiple browsers, ensuring broad accessibility and user convenience.
+
+10. **DC-010: Offline Functionality**  
+    CCTNS must provide critical functionality offline to ensure continuity of operations during network outages.
+
+11. **DC-011: Data Encryption**  
+    CCTNS must support selective encryption of stored data to protect sensitive information.
+
+12. **DC-012: Performance Requirements**  
+    CCTNS must meet specified performance benchmarks, such as response times for searches and retrieval of cases, to ensure efficient user experience.
+
+13. **DC-013: Modular Design**  
+    CCTNS must be designed with a modular architecture to facilitate maintenance, updates, and scalability.
+
+14. **DC-014: User Adaptation and Accessibility**  
+    CCTNS must consider user adaptation and accessibility, ensuring that the system is usable by individuals with varying needs and preferences.
+
+15. **DC-015: Secure Communication**  
+    CCTNS must use HTTPS for secure communication and ensure secure data transmission using SSL and digital signatures.
+
+16. **DC-016: Data Caching**  
+    CCTNS must implement data caching strategies to enhance performance and reduce server load.
+
+17. **DC-017: Hierarchical Cache for Search Results**  
+    CCTNS must use a hierarchical cache for frequently used search results to improve search efficiency.
+
+18. **DC-018: Database Indexing**  
+    CCTNS must apply database indexes to key columns used for searching to optimize query performance.
+
+These design constraints ensure that the CCTNS system is robust, secure, and efficient, meeting the specified requirements and user needs.

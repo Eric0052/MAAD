@@ -1,0 +1,33 @@
+The Design Constraints are:
+
+1. **DC-001: System Architecture**  
+   The APAF system must be designed to support the acquisition, processing, and storage of telemetry and science data in a manner that aligns with the existing infrastructure and technology stack at SwRI.
+
+2. **DC-002: Data Processing**  
+   The system must be capable of processing data into Instrument Data File Sets (IDFS) and handling engineering and ancillary information necessary for calibration and science validation.
+
+3. **DC-003: Storage and Archiving**  
+   The system must include a local SwRI archive for storing telemetry and IDFS data, ensuring data availability and re-processing capabilities.
+
+4. **DC-004: Web-Based Interface**  
+   The design must incorporate web-based displays for public and restricted access, with appropriate password protection mechanisms.
+
+5. **DC-005: Error Handling**  
+   The system must include built-in error handling features to maintain data integrity throughout the processing and storage phases.
+
+6. **DC-006: Data Distribution**  
+   The design must facilitate the timely distribution of data to Co-Investigators and ensure compliance with NASA PDS standards for data provision.
+
+7. **DC-007: Security and Privacy**  
+   The system must implement security measures, including password protection, to safeguard sensitive data and restrict access to authorized personnel only.
+
+8. **DC-008: Maintenance and Support**  
+   The design must allow for ongoing system maintenance and software support to ensure operational continuity.
+
+9. **DC-009: Compliance with NASA Standards**  
+   The system must comply with NASA's data repository requirements, ensuring that all data is calibrated, validated, and deposited in a PDS-compliant form.
+
+10. **DC-010: Operational Procedures**  
+    The design must include clear operational procedures documented in the APAF Operation Procedures Document, eliminating the need for additional training requirements.
+
+These constraints ensure that the system is designed to meet the specified requirements while adhering to operational, security, and compliance standards.

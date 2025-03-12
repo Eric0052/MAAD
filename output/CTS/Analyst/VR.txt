@@ -1,0 +1,131 @@
+1. CCTNS must focus on critical functionality that provides value to police personnel, especially officers at the cutting edge, to improve crime investigation and criminal detection outcomes.
+2. CCTNS functionality must deliver value to Investigating Officers (IOs), records room staff, and citizens within the crime investigation area.
+3. CCTNS must include nine different function blocks with detailed functionality for each block.
+4. CCTNS must ease day-to-day police operations.
+5. Citizens must be able to register complaints with the police, and the police must take the complaint forward based on evidence and investigation.
+6. The Registration module must act as an interface between police and citizens, easing interaction and information exchange.
+7. After a complaint is initiated, the police must initiate the investigation process.
+8. The Investigation module must facilitate the investigation process and introduce operational efficiencies by automating tasks post-registration.
+9. A designated constable must interface with the courts, aided by the Prosecution module for recording court interactions.
+10. The Search module must allow police personnel to execute basic or advanced searches on cases, people, crime types, modus operandi, and property.
+11. The Search module must allow customization of results by criminal/accused or by cases.
+12. The Search module must enable different types of queries, such as monthly reporting and RTI-related queries.
+13. The Citizen Interface module must act as a conduit for information exchange between citizens and police units/personnel.
+14. The Citizen Interface module must allow citizens to get information or acknowledgments from the police and enable quick police responses.
+15. The Navigation module must provide role-based landing pages to help police personnel navigate the CCTNS application efficiently.
+16. The Navigation module must display information such as assigned cases, alerts, and pending tasks.
+17. Functional requirements for each module must be detailed in separate enclosures (A1 to A7).
+18. Non-functional requirements must specify qualitative attributes like user-friendliness and performance for increased user acceptance.
+19. The solution must provide detailed context-sensitive help material for all user interfaces.
+20. The solution must provide an interface for users to log defects or enhancement requests and track them.
+21. The solution must send alerts (e.g., email, SMS) to users when actions are taken on alerts.
+22. The solution must enable users to track submitted defects or enhancement requests.
+23. The help-desk user must view reports on submitted defects or enhancement requests by category, status, and age.
+24. The support solution must be accessible both within and outside the application through a browser interface.
+25. CCTNS must keep an unalterable audit trail capturing all actions on critical entities, including user actions, date, time, and administrative parameters.
+26. The audit trail data must be unalterable, though it can be copied to removable media if unchanged.
+27. Once activated, the audit trail must track events automatically and store information for the life of the case.
+28. Audit trail data must be available for inspection on request by authorized personnel.
+29. CCTNS must export audit trails for specified cases without affecting stored audit trails.
+30. CCTNS must capture and store access control violations and attempted violations.
+31. CCTNS must provide reports for actions on cases organized by workstation and network address.
+32. CCTNS must control user access to correspondences, files, and records.
+33. CCTNS must allow users to limit access to cases to specified users or groups.
+34. CCTNS must provide role-based control for functionality.
+35. CCTNS must allow users to be members of more than one group.
+36. Only admin-users must set up user profiles and allocate users to groups.
+37. Users must stipulate which other users or groups can access cases.
+38. Only super-users must change security attributes for groups or users.
+39. CCTNS must provide configurable responses for unauthorized access attempts.
+40. CCTNS must exclude unauthorized records from search results.
+41. Unauthorized access attempts must be logged in the audit trail.
+42. All activities involving cases and related documents must be stored in the audit trail.
+43. Error messages must be meaningful, with explanatory text and suggested actions.
+44. CCTNS must employ a consistent user interface for a familiar look and feel.
+45. CCTNS must display multiple entities (cases, suspects) simultaneously.
+46. Interfaces must be customizable, with configurations saved in user profiles.
+47. CCTNS must allow persistent defaults for data entry.
+48. Frequently-executed transactions must be designed for minimal interactions.
+49. Graphical user interfaces must allow user customization.
+50. User interfaces must be user-intuitive and comply with ISO 9241 standards.
+51. CCTNS must provide text equivalents for non-text media objects.
+52. Navigation must be self-descriptive, showing users their location and navigation options.
+53. Navigation steps must be minimized, considering user tasks and strategies.
+54. Splash screens must be avoided unless providing useful content or feedback.
+55. Additional windows must only open if supporting user tasks.
+56. Important information must be placed at the top of pages, with links to further content.
+57. Horizontal scrolling must be avoided.
+58. User interfaces must support input device independence.
+59. User interfaces must be robust against changing technology.
+60. Pages must have acceptable opening and download times.
+61. User errors and recovery efforts must be minimized.
+62. Error messages must be clear, stating reasons and possible resolutions.
+63. Interfaces must use appropriate formats, units, and currency.
+64. Text must be resizable by users.
+65. Text quality must be sufficient for readability.
+66. Textual content must support reading and understanding through suitable means.
+67. Text skimming must be supported with clear links, lists, and headings.
+68. Text readability must consider display characteristics and spatial arrangement.
+69. Links must be formatted to avoid impeding text readability.
+70. Navigation links must use familiar terminology and descriptive labels.
+71. Links opening new windows must be clearly marked.
+72. Navigation links must be distinguishable from controls.
+73. Printable document versions must be provided for unsuitable online reading.
+74. "White space" must be used to organize content without impairing skimming.
+75. Page lengths must support the primary purpose and use of the page.
+76. Color must be used with care, not as the only means of conveying information.
+77. Frames must be used with care, with alternatives provided.
+78. Text-only page alternatives must be available if style sheets or frames are off.
+79. Page layout must be consistent across pages.
+80. Page titles must be consistently placed.
+81. Human perception principles must be considered in page design.
+82. Each page must link back to the home page or a landmark page.
+83. A site map must be provided for navigation overview.
+84. Navigation components must be consistent with content and placement.
+85. User adaptation must be considered for accessibility.
+86. User tasks and information needs must guide access paths and navigation structures.
+87. Individualization and adaptation must be evident to users.
+88. User profiles must be evident and modifiable by users.
+89. CCTNS must be available to users during specified hours and days.
+90. Planned downtime must not exceed specified hours per rolling three-month period.
+91. Unplanned downtime must not exceed specified hours/minutes per rolling three-month period.
+92. CCTNS must be restorable within specified hours after failure.
+93. CCTNS must provide adequate response times under standard and peak conditions.
+94. Simple searches must complete within 5-8 seconds, advanced searches within 10-15 seconds.
+95. Recently accessed cases must be retrievable within 5-8 seconds.
+96. Infrequently accessed cases must be retrievable within 20 seconds.
+97. CCTNS must be scalable for varying police station sizes and case numbers.
+98. CCTNS must support multilingual interfaces.
+99. CCTNS must prevent data loss during equipment or network failures.
+100. CCTNS must function offline with critical functionality.
+101. CCTNS must perform satisfactorily on low-bandwidth connections.
+102. CCTNS must be implemented using Service Oriented Architecture (SOA) and modular design.
+103. CCTNS must be developed on Open Standards.
+104. CCTNS must use a common User Access and Authentication Service for Single-Sign On.
+105. CCTNS must be developed for centralized deployment and maintenance.
+106. CCTNS must be deployed in a 3-tier datacenter architecture.
+107. CCTNS must have an n-tier architecture separating presentation, business, and data-access logic.
+108. CCTNS must be extensible for access through PDAs and mobile data terminals.
+109. CCTNS must adopt standardized formats and common metadata elements.
+110. CCTNS must be accessible through browser-based systems with minimal client device requirements.
+111. CCTNS must support multiple communication services for remote access.
+112. CCTNS must support public access to a subset of data and functionality.
+113. CCTNS must support multi-tier authentication where required.
+114. CCTNS must support SSL encrypted connections and secure VPN connections.
+115. CCTNS must use HTTPS for secure communication.
+116. CCTNS must run on multiple browsers.
+117. CCTNS must support selective encryption of stored data.
+118. CCTNS must ensure secure data transmission using SSL and 2-way digital signatures.
+119. CCTNS must prevent cross-site scripting, SQL Injection, and use parameterized queries.
+120. CCTNS must sanitize user inputs and validate incoming data.
+121. CCTNS must encode incoming data and validate data at both client and server.
+122. CCTNS must perform soft tagging for deletion instead of hard delete.
+123. CCTNS must use caching for frequent data to ensure scalability and performance.
+124. CCTNS must use AJAX technology to improve user experience.
+125. CCTNS must leverage Asynchronous HTTP socket capabilities for scalability and performance.
+126. CCTNS must host static content on the web server.
+127. Search results must be fetched in batches of 10 or 20 as configured.
+128. CCTNS must display records in a paged manner.
+129. Searches must fetch only necessary fields, with additional details fetched on demand.
+130. A hierarchical cache must be used for frequently used search results.
+131. Database indexes must be applied to key columns used for searching.

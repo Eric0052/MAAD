@@ -1,0 +1,42 @@
+**DigitalHome System Requirements Document**
+
+1. The DigitalHome system shall allow home residents to manage security, environmental and energy management (temperature, humidity, and lighting), entertainment, and communications.
+2. The system shall consist of household devices, sensors, controllers, communication links, and a computer system to manage these components.
+3. The initial version of DigitalHome will be a limited prototype for business decision-making regarding future commercial development.
+4. The scope of the project is limited to managing devices controlling temperature, humidity, security, and power to small appliances and lighting units via a web-ready device.
+5. The prototype DigitalHome software system will be tested in a simulated environment that adheres to real home physical properties and constraints.
+6. The general user shall be able to monitor and control the home environment using a web interface.
+7. A Master User shall have the ability to change system configurations, add user accounts, and modify default parameter settings.
+8. A DigitalHome Technician shall set up and maintain the system configuration, with rights beyond the General User.
+9. The prototype version must be completed within twelve months with a development team of five engineers.
+10. The system shall employ widely used, accepted, and available hardware and software technology and standards.
+11. The cost of DigitalHome elements should be minimized due to potential market competition.
+12. Major changes to the requirements must be approved by the Director of the DigitalHomeOwner Division.
+13. The system shall require an Internet Service Provider (ISP) that is widely available.
+14. The DigitalHome system shall have the capability to establish an individual home web server for interaction, control, and data storage.
+15. The home web server shall provide backup service for user account information, user plans, and a home database.
+16. The DigitalHome Gateway device shall provide communication with all DigitalHome devices and connect with a broadband Internet connection.
+17. The Gateway shall contain an RF Module for wireless communication with a range of up to 1000 feet indoors.
+18. The system shall include digital programmable thermostats to monitor and regulate temperature, with a sensitivity range between 14ºF and 104ºF.
+19. The system shall include digital programmable humidistats to monitor and regulate humidity, with settings from 30% to 60%.
+20. The system shall include magnetic alarm contact switches for monitoring entry through doors or windows.
+21. The system shall include security sound and light alarms activated by security breaches.
+22. The system shall include digital programmable power switches to monitor and change the state of appliances.
+23. The DigitalHome System shall allow control of temperature, humidity, lights, security, and small appliances via a web-ready device.
+24. The communication center shall be a DigitalHome home web server for monitoring and controlling home devices.
+25. The DigitalHome shall be equipped with various environmental controllers and sensors.
+26. The system shall support Fahrenheit and Celsius temperature values and be compatible with centralized HVAC systems.
+27. The system shall adhere to ASHRAE standards, policies, and procedures.
+28. The DigitalHome security system shall manage up to fifty door and window contact sensors.
+29. The Appliance Manager shall manage up to one hundred 115 volt, 10 amp power switches.
+30. The DigitalHome Planner shall allow users to set preset home parameters for certain time periods.
+31. The system shall provide a monthly report on home management and control, including environmental parameters and security breaches.
+32. Displays of environmental conditions shall be updated at least every two seconds.
+33. Sensors shall have a minimum data acquisition rate of 10 Hz.
+34. Environmental sensors or controllers must be within 1000 feet of the master control device.
+35. The DigitalHome System must be highly reliable with no more than 1 failure per 10,000 hours of operation.
+36. The system shall incorporate backup and recovery mechanisms for system data.
+37. All operations shall incorporate exception handling with clear, descriptive error messages.
+38. Upon installation, a DigitalHome user account shall be established with authentication and encryption.
+39. The development shall use object-oriented development and UML 2.0, with exceptions approved by the CIO.
+40. All system documents shall be up-to-date, use the Homeowner document format, and reside in the HomeOwner Document Archive at project completion.

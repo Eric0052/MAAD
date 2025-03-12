@@ -1,0 +1,39 @@
+The functional requirements are:
+
+1. **[FR-001]**  
+   1.1 Acquire telemetry data of the ASPERA-3 Experiment and Mars Express Orbit/Attitude from ESOC.  
+   1.2 Automatically process the data on a daily basis.
+
+2. **[FR-002]**  
+   2.1 Process all ASPERA-3 science data into Instrument Data File Sets (IDFS).
+
+3. **[FR-003]**  
+   3.1 Process engineering and ancillary information necessary for calibration and science validation into IDFS data sets.
+
+4. **[FR-004]**  
+   4.1 Generate intermediate files of cleaned-up ASPERA-3 and MEX OA telemetry if cleaned-up telemetry is not provided by ESOC.
+
+5. **[FR-005]**  
+   5.1 Store ASPERA-3 and MEX OA telemetry data on a local SwRI archive for data availability and re-processing.
+
+6. **[FR-006]**  
+   6.1 Store ASPERA-3 and MEX OA IDFS data sets on a local SwRI archive for data availability and analysis.
+
+7. **[FR-007]**  
+   7.1 Store any APAF-generated intermediate files of ASPERA-3 and MEX OA cleaned-up telemetry on a local SwRI archive for data availability and re-processing.
+
+8. **[FR-008]**  
+   8.1 Provide web-based displays of the most current ASPERA-3 data for public view to monitor instrument performance.
+
+9. **[FR-009]**  
+   9.1 Provide web-based displays defined by the ASPERA-3 team for science analysis, password protected until the data is made public.
+
+10. **[FR-010]**  
+    10.1 Implement built-in error handling in the APAF ground data system for better data integrity.
+
+11. **[FR-011, DR-001, DR-002, DR-003]**  
+    11.1 Provide ASPERA-3 and MEX OA IDFS data and any APAF-generated intermediate files of cleaned-up telemetry to all ASPERA-3 Co-Investigators within 24 hours of acquiring telemetry, given error-free transmission and processing.
+
+12. **[FR-012, FR-013, DR-007, DR-008]**  
+    12.1 Make IDFS data access software and science analysis software developed by SwRI available to the ASPERA-3 Co-Investigators.  
+    12.2 Integrate the software into the NASA-approved data repository.

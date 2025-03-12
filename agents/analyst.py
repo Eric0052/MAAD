@@ -4,6 +4,8 @@ from metagpt.roles import Role
 import asyncio
 from metagpt.logs import logger
 from metagpt.schema import Message
+import json
+import os
 
 class AnalyzeRequirement(Action):
     PROMPT_TEMPLATE_ANALYZE: str = """
@@ -84,32 +86,39 @@ class AnalyzeRequirement(Action):
     ..."
     """
     name: str = "AnalyzeRequirement"
+    
+    requirement_root : Path = Path("output//Analyst")
+
+    #根据json文件中的配置信息，生成对应的文件名
+    @classmethod
+    def set_output_root(cls, requirement_root: Path):
+        cls.requirement_root = requirement_root
 
     async def run(self, requirement_documents: str):
         prompt_analyze = self.PROMPT_TEMPLATE_ANALYZE.format(requirement_documents=requirement_documents)
         integrated_requirements = await self._aask(prompt_analyze)
         file_path = self.file_name("IntegratedRequirements")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(integrated_requirements)
         prompt_verify = self.PROMPT_TEMPLATE_VERIFY.format(processed_requirements=integrated_requirements, requirement_documents=requirement_documents)
         verified_requirements = await self._aask(prompt_verify)
         file_path = self.file_name("VerifiedRequirements")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(verified_requirements)
         prompt1 = self.PROMPT_TEMPLATE1.format(verified_requirements=verified_requirements)
         rsp = await self._aask(prompt1)
         file_path = self.file_name("ASR")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
         prompt2 = self.PROMPT_TEMPLATE2.format(verified_requirements=verified_requirements)
         rsp = await self._aask(prompt2)
         file_path = self.file_name("FR")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
         prompt3 = self.PROMPT_TEMPLATE3.format(verified_requirements=verified_requirements)
         rsp = await self._aask(prompt3)
         file_path = self.file_name("NFR")
-        with file_path.open("w") as f:
+        with file_path.open("w", encoding="utf-8") as f:
             f.write(rsp)
         prompt4 = self.PROMPT_TEMPLATE4.format(verified_requirements=verified_requirements)
         rsp = await self._aask(prompt4)
@@ -117,40 +126,28 @@ class AnalyzeRequirement(Action):
         with file_path.open("w") as f:
             f.write(rsp)
 
-    @staticmethod
-    def file_name(name : str) -> str:
-        output_dir = Path("output//Analyst")
+    @classmethod
+    def file_name(cls, name : str) -> str:
+        output_dir = cls.requirement_root
         output_dir.mkdir(parents=True, exist_ok=True)
         # 查找现有文件并生成新的文件名
         if name == "IntegratedRequirements":
-            existing_files = list(output_dir.glob("IntegratedRequirements_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"IntegratedRequirements_{file_index}.txt"
+            file_name = f"IntegratedRequirements.txt"
             file_path = output_dir / file_name
         elif name == "VerifiedRequirements":
-            existing_files = list(output_dir.glob("VerifiedRequirements_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"VerifiedRequirements_{file_index}.txt"
+            file_name = f"VerifiedRequirements.txt"
             file_path = output_dir / file_name
         elif name == "ASR":
-            existing_files = list(output_dir.glob("ASR_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"ASR_{file_index}.txt"
+            file_name = f"ASR.txt"
             file_path = output_dir / file_name
         elif name == "FR":
-            existing_files = list(output_dir.glob("FR_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"FR_{file_index}.txt"
+            file_name = f"FR.txt"
             file_path = output_dir / file_name
         elif name == "NFR":
-            existing_files = list(output_dir.glob("NFR_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"NFR_{file_index}.txt"
+            file_name = f"NFR.txt"
             file_path = output_dir / file_name
         elif name == "DC":
-            existing_files = list(output_dir.glob("DC_*.txt"))
-            file_index = len(existing_files) + 1
-            file_name = f"DC_{file_index}.txt"
+            file_name = f"DC.txt"
             file_path = output_dir / file_name
         return file_path
 
@@ -170,11 +167,19 @@ class Analyst(Role):
         await todo.run(msg.content)
 
 async def main():
-    #从requirement_document.txt中读取文本
-    with open(".\\requirement_document\\SFS.txt") as f:
+    #从config.json中读取需求文档
+    with open("config.json", "r") as f:
+        config = json.load(f)
+    input_file = config["input_file"]
+    #读取需求文档
+    with open(input_file, "r", encoding='utf-8') as f:
         requirement = f.read()
     role = Analyst()
-    # logger.info(requirement)
+    file_name = os.path.basename(input_file)
+    # print(input_file)
+    #根据读取的input_file修改requirement_root
+    requirement_root = Path("output//" + file_name.split(".")[0] + "//Analyst")
+    AnalyzeRequirement.set_output_root(requirement_root)
     result = await role.run(requirement)
     logger.info(result)
 

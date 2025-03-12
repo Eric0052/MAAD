@@ -1,0 +1,96 @@
+The functional requirements are:
+
+1. **[FR-001] CCTNS Functionality for Police Personnel**
+   1.1 Provide value to police personnel, especially officers at the cutting edge.
+   1.2 Improve crime investigation and criminal detection outcomes.
+
+2. **[FR-002] CCTNS Functionality for Stakeholders**
+   2.1 Deliver value to Investigating Officers (IOs), records room staff, and citizens.
+   2.2 Enhance crime investigation processes.
+
+3. **[FR-003] Function Blocks**
+   3.1 Include nine different function blocks with detailed functionality.
+
+4. **[FR-004] Ease of Operations**
+   4.1 Ease day-to-day police operations.
+
+5. **[FR-005] Complaint Registration**
+   5.1 Allow citizens to register complaints.
+   5.2 Police must take action based on evidence and investigation.
+
+6. **[FR-006] Registration Module**
+   6.1 Act as an interface between police and citizens.
+   6.2 Ease interaction and information exchange.
+
+7. **[FR-007] Investigation Process**
+   7.1 Initiate the investigation process after a complaint.
+
+8. **[FR-008] Investigation Module**
+   8.1 Facilitate the investigation process.
+   8.2 Automate tasks post-registration.
+
+9. **[FR-009] Prosecution Module**
+   9.1 Designated constable interfaces with courts.
+   9.2 Aid court interactions.
+
+10. **[FR-010] Search Module**
+    10.1 Execute basic or advanced searches on cases, people, crime types, modus operandi, and property.
+    10.2 Customize results by criminal/accused or by cases.
+    10.3 Enable different types of queries, such as monthly reporting and RTI-related queries.
+
+11. **[FR-011] Citizen Interface Module**
+    11.1 Act as a conduit for information exchange between citizens and police units/personnel.
+    11.2 Allow citizens to get information or acknowledgments from the police.
+
+12. **[FR-012] Navigation Module**
+    12.1 Provide role-based landing pages.
+    12.2 Display information such as assigned cases, alerts, and pending tasks.
+
+13. **[FR-013] Help and Defect Tracking**
+    13.1 Provide context-sensitive help material.
+    13.2 Interface for users to log defects or enhancement requests and track them.
+    13.3 Send alerts to users when actions are taken on alerts.
+
+14. **[FR-014] Audit Trail and Access Control**
+    14.1 Keep an unalterable audit trail.
+    14.2 Capture and store access control violations.
+
+15. **[FR-015] User Access Control**
+    15.1 Control user access to correspondences, files, and records.
+    15.2 Provide role-based control for functionality.
+
+16. **[FR-016] User Interface Requirements**
+    16.1 Employ a consistent user interface.
+    16.2 Allow user customization and persistent defaults.
+
+17. **[FR-017] Navigation and Interface Robustness**
+    17.1 Provide text equivalents for non-text media objects.
+    17.2 Ensure navigation is self-descriptive.
+
+18. **[FR-018] Text and Content Presentation**
+    18.1 Support text resizing and readability.
+    18.2 Use clear links, lists, and headings for text skimming.
+
+19. **[FR-019] Link and Page Layout**
+    19.1 Use familiar terminology and descriptive labels for navigation links.
+    19.2 Provide printable document versions.
+
+20. **[FR-020] Page Consistency and User Adaptation**
+    20.1 Ensure page layout is consistent across pages.
+    20.2 Consider user adaptation for accessibility.
+
+21. **[FR-021] Availability and Performance**
+    21.1 Ensure availability during specified hours.
+    21.2 Provide adequate response times under standard and peak conditions.
+
+22. **[FR-022] Scalability and Architecture**
+    22.1 Support multilingual interfaces.
+    22.2 Implement using Service Oriented Architecture (SOA) and modular design.
+
+23. **[FR-023] Security and Communication**
+    23.1 Support SSL encrypted connections and secure VPN connections.
+    23.2 Prevent cross-site scripting and SQL Injection.
+
+24. **[FR-024] Search and Data Management**
+    24.1 Use caching for frequent data.
+    24.2 Display search results in a paged manner.

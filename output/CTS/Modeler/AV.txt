@@ -1,0 +1,123 @@
+To create the architectural views using PlantUML syntax, we will break down the requirements and constraints into logical, process, development, physical, and scenario views. Each view will be represented in PlantUML syntax, and key architectural decisions will be documented.
+
+### 1. [Logic View]
+
+The logic view illustrates the primary functional modules of the system and their interactions.
+
+```plantuml
+@startuml
+package "CCTNS System" {
+    [User Interface] --> [Localization Service]
+    [User Interface] --> [Authentication Service]
+    [User Interface] --> [Registration Module]
+    [Registration Module] --> [Investigation Module]
+    [Investigation Module] --> [Prosecution Module]
+    [Prosecution Module] --> [Search Module]
+    [Search Module] --> [Database]
+    [Database] --> [Audit Trail]
+    [Audit Trail] --> [Security Layer]
+    [Security Layer] --> [Network Infrastructure]
+    [Network Infrastructure] --> [Communication Gateway]
+    [Communication Gateway] --> [Remote Access Service]
+    [Remote Access Service] --> [Mobile Interface]
+    [Mobile Interface] --> [API Gateway]
+}
+@enduml
+```
+
+### 2. [Process View]
+
+The process view deals with the dynamic aspects of the system, focusing on runtime behavior.
+
+```plantuml
+@startuml
+actor User
+actor PolicePersonnel
+actor Citizen
+
+User --> (Login) : "Authenticate"
+PolicePersonnel --> (Register Complaint) : "Submit"
+Citizen --> (Register Complaint) : "Submit"
+(Complaint Process) --> (Investigation Process) : "Initiate"
+(Investigation Process) --> (Prosecution Process) : "Proceed"
+(Prosecution Process) --> (Search) : "Query"
+(Search) --> (Audit Trail) : "Log"
+(Audit Trail) --> (Security Check) : "Verify"
+(Security Check) --> (Response) : "Authorize"
+@enduml
+```
+
+### 3. [Development View]
+
+The development view illustrates the system from a programmer's perspective.
+
+```plantuml
+@startuml
+package "CCTNS Development" {
+    [Frontend Module] --> [Backend Module]
+    [Backend Module] --> [Database Layer]
+    [Database Layer] --> [Security Layer]
+    [Security Layer] --> [Network Layer]
+    [Network Layer] --> [Communication Layer]
+    [Communication Layer] --> [Mobile Access Layer]
+}
+@enduml
+```
+
+### 4. [Physical View]
+
+The physical view depicts the system from a system engineer's point of view.
+
+```plantuml
+@startuml
+node "Data Center" {
+    [Application Server] --> [Database Server]
+    [Database Server] --> [Security Server]
+    [Security Server] --> [Network Server]
+    [Network Server] --> [Communication Server]
+    [Communication Server] --> [Mobile Server]
+}
+@enduml
+```
+
+### 5. [Scenario View]
+
+The scenario view illustrates a use case scenario.
+
+```plantuml
+@startuml
+actor User
+actor PolicePersonnel
+actor Citizen
+
+User -> (Login) : "Enter Credentials"
+(Login) -> (Authentication Service) : "Verify"
+(Authentication Service) -> User : "Access Granted"
+User -> (Register Complaint) : "Submit Details"
+(Register Complaint) -> (Database) : "Store Data"
+(Database) -> (Audit Trail) : "Log Entry"
+(Audit Trail) -> User : "Confirmation"
+@enduml
+```
+
+### 6. [Architectural Decisions]
+
+**[Decision 1]:** Use of Service Oriented Architecture (SOA)  
+*Rationale:* SOA allows for modularity and reusability, aligning with the requirement for a modular design and ease of integration.
+
+**[Decision 2]:** Implementation of a centralized authentication service  
+*Rationale:* Centralized authentication enhances security and usability by providing a single sign-on experience, as required by ASR-003.
+
+**[Decision 3]:** Support for multilingual interfaces  
+*Rationale:* Multilingual support ensures usability and accessibility across different regions, as specified in ASR-002 and DC-005.
+
+**[Decision 4]:** Use of SSL and secure VPN connections  
+*Rationale:* Ensures data confidentiality and integrity, complying with security standards as outlined in ASR-005 and DC-006.
+
+**[Decision 5]:** Offline functionality for critical operations  
+*Rationale:* Ensures availability and reliability during network outages, as required by ASR-008 and DC-010.
+
+**[Decision 6]:** Implementation of role-based access control  
+*Rationale:* Enhances security by ensuring users have access only to necessary functionalities, as specified in DC-002.
+
+These architectural decisions were made to ensure the CCTNS system meets the specified requirements and constraints, providing a robust, secure, and efficient solution.

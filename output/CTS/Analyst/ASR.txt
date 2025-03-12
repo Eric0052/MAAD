@@ -1,0 +1,63 @@
+The ASRs are:
+
+1. **ASR-001:**
+   - **Original text of ASR1:** CCTNS must be scalable for varying police station sizes and case numbers.
+   - **Related quality attribute(s):** Scalability, Flexibility
+   - **Architectural Impact:** Requires a modular and scalable architecture to accommodate different sizes and numbers of cases.
+   - **Related Components:** Database, Application Server, Load Balancer
+
+2. **ASR-002:**
+   - **Original text of ASR2:** CCTNS must support multilingual interfaces.
+   - **Related quality attribute(s):** Usability, Internationalization
+   - **Architectural Impact:** Requires a design that supports multiple languages, possibly through resource files or a localization framework.
+   - **Related Components:** User Interface, Localization Service
+
+3. **ASR-003:**
+   - **Original text of ASR3:** CCTNS must use a common User Access and Authentication Service for Single-Sign On.
+   - **Related quality attribute(s):** Security, Usability
+   - **Architectural Impact:** Requires integration with a centralized authentication service, impacting security protocols and user management.
+   - **Related Components:** Authentication Service, User Management System
+
+4. **ASR-004:**
+   - **Original text of ASR4:** CCTNS must be developed for centralized deployment and maintenance.
+   - **Related quality attribute(s):** Maintainability, Manageability
+   - **Architectural Impact:** Centralized architecture is needed, affecting deployment strategies and maintenance processes.
+   - **Related Components:** Deployment Server, Configuration Management
+
+5. **ASR-005:**
+   - **Original text of ASR5:** CCTNS must support SSL encrypted connections and secure VPN connections.
+   - **Related quality attribute(s):** Security, Confidentiality
+   - **Architectural Impact:** Requires secure communication protocols and infrastructure to ensure data protection.
+   - **Related Components:** Network Infrastructure, Security Layer
+
+6. **ASR-006:**
+   - **Original text of ASR6:** CCTNS must prevent cross-site scripting, SQL Injection, and use parameterized queries.
+   - **Related quality attribute(s):** Security, Integrity
+   - **Architectural Impact:** Requires secure coding practices and validation mechanisms to protect against vulnerabilities.
+   - **Related Components:** Web Application Firewall, Database Layer
+
+7. **ASR-007:**
+   - **Original text of ASR7:** CCTNS must be implemented using Service Oriented Architecture (SOA) and modular design.
+   - **Related quality attribute(s):** Modularity, Reusability
+   - **Architectural Impact:** Requires a service-oriented approach, impacting how services are designed and interact.
+   - **Related Components:** Service Bus, Microservices
+
+8. **ASR-008:**
+   - **Original text of ASR8:** CCTNS must function offline with critical functionality.
+   - **Related quality attribute(s):** Availability, Reliability
+   - **Architectural Impact:** Requires offline capabilities, impacting data synchronization and local storage solutions.
+   - **Related Components:** Local Database, Synchronization Service
+
+9. **ASR-009:**
+   - **Original text of ASR9:** CCTNS must support multiple communication services for remote access.
+   - **Related quality attribute(s):** Accessibility, Flexibility
+   - **Architectural Impact:** Requires integration with various communication protocols and services.
+   - **Related Components:** Communication Gateway, Remote Access Service
+
+10. **ASR-010:**
+    - **Original text of ASR10:** CCTNS must be extensible for access through PDAs and mobile data terminals.
+    - **Related quality attribute(s):** Extensibility, Portability
+    - **Architectural Impact:** Requires a design that supports mobile and handheld device access.
+    - **Related Components:** Mobile Interface, API Gateway
+
+These ASRs are critical in shaping the architecture of the CCTNS system, ensuring it meets the necessary quality attributes and functional requirements.

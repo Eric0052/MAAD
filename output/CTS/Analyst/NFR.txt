@@ -1,0 +1,440 @@
+The Non-functional Requirements are:
+
+1. **[NFR-001]:**
+   - Non-functional requirements must specify qualitative attributes like user-friendliness and performance for increased user acceptance.
+   - Related quality attribute(s): Usability, Performance
+
+2. **[NFR-002]:**
+   - The solution must provide detailed context-sensitive help material for all user interfaces.
+   - Related quality attribute(s): Usability, Supportability
+
+3. **[NFR-003]:**
+   - The solution must provide an interface for users to log defects or enhancement requests and track them.
+   - Related quality attribute(s): Supportability, Maintainability
+
+4. **[NFR-004]:**
+   - The solution must send alerts (e.g., email, SMS) to users when actions are taken on alerts.
+   - Related quality attribute(s): Reliability, Usability
+
+5. **[NFR-005]:**
+   - The solution must enable users to track submitted defects or enhancement requests.
+   - Related quality attribute(s): Supportability, Maintainability
+
+6. **[NFR-006]:**
+   - The help-desk user must view reports on submitted defects or enhancement requests by category, status, and age.
+   - Related quality attribute(s): Supportability, Maintainability
+
+7. **[NFR-007]:**
+   - The support solution must be accessible both within and outside the application through a browser interface.
+   - Related quality attribute(s): Accessibility, Usability
+
+8. **[NFR-008]:**
+   - CCTNS must keep an unalterable audit trail capturing all actions on critical entities, including user actions, date, time, and administrative parameters.
+   - Related quality attribute(s): Security, Integrity
+
+9. **[NFR-009]:**
+   - The audit trail data must be unalterable, though it can be copied to removable media if unchanged.
+   - Related quality attribute(s): Security, Integrity
+
+10. **[NFR-010]:**
+    - Once activated, the audit trail must track events automatically and store information for the life of the case.
+    - Related quality attribute(s): Security, Integrity
+
+11. **[NFR-011]:**
+    - Audit trail data must be available for inspection on request by authorized personnel.
+    - Related quality attribute(s): Security, Accessibility
+
+12. **[NFR-012]:**
+    - CCTNS must export audit trails for specified cases without affecting stored audit trails.
+    - Related quality attribute(s): Security, Integrity
+
+13. **[NFR-013]:**
+    - CCTNS must capture and store access control violations and attempted violations.
+    - Related quality attribute(s): Security, Integrity
+
+14. **[NFR-014]:**
+    - CCTNS must provide reports for actions on cases organized by workstation and network address.
+    - Related quality attribute(s): Security, Traceability
+
+15. **[NFR-015]:**
+    - CCTNS must control user access to correspondences, files, and records.
+    - Related quality attribute(s): Security, Access Control
+
+16. **[NFR-016]:**
+    - CCTNS must allow users to limit access to cases to specified users or groups.
+    - Related quality attribute(s): Security, Access Control
+
+17. **[NFR-017]:**
+    - CCTNS must provide role-based control for functionality.
+    - Related quality attribute(s): Security, Access Control
+
+18. **[NFR-018]:**
+    - CCTNS must allow users to be members of more than one group.
+    - Related quality attribute(s): Security, Flexibility
+
+19. **[NFR-019]:**
+    - Only admin-users must set up user profiles and allocate users to groups.
+    - Related quality attribute(s): Security, Access Control
+
+20. **[NFR-020]:**
+    - Users must stipulate which other users or groups can access cases.
+    - Related quality attribute(s): Security, Access Control
+
+21. **[NFR-021]:**
+    - Only super-users must change security attributes for groups or users.
+    - Related quality attribute(s): Security, Access Control
+
+22. **[NFR-022]:**
+    - CCTNS must provide configurable responses for unauthorized access attempts.
+    - Related quality attribute(s): Security, Flexibility
+
+23. **[NFR-023]:**
+    - CCTNS must exclude unauthorized records from search results.
+    - Related quality attribute(s): Security, Access Control
+
+24. **[NFR-024]:**
+    - Unauthorized access attempts must be logged in the audit trail.
+    - Related quality attribute(s): Security, Traceability
+
+25. **[NFR-025]:**
+    - All activities involving cases and related documents must be stored in the audit trail.
+    - Related quality attribute(s): Security, Traceability
+
+26. **[NFR-026]:**
+    - Error messages must be meaningful, with explanatory text and suggested actions.
+    - Related quality attribute(s): Usability, Supportability
+
+27. **[NFR-027]:**
+    - CCTNS must employ a consistent user interface for a familiar look and feel.
+    - Related quality attribute(s): Usability, Consistency
+
+28. **[NFR-028]:**
+    - CCTNS must display multiple entities (cases, suspects) simultaneously.
+    - Related quality attribute(s): Usability, Efficiency
+
+29. **[NFR-029]:**
+    - Interfaces must be customizable, with configurations saved in user profiles.
+    - Related quality attribute(s): Usability, Flexibility
+
+30. **[NFR-030]:**
+    - CCTNS must allow persistent defaults for data entry.
+    - Related quality attribute(s): Usability, Efficiency
+
+31. **[NFR-031]:**
+    - Frequently-executed transactions must be designed for minimal interactions.
+    - Related quality attribute(s): Usability, Efficiency
+
+32. **[NFR-032]:**
+    - Graphical user interfaces must allow user customization.
+    - Related quality attribute(s): Usability, Flexibility
+
+33. **[NFR-033]:**
+    - User interfaces must be user-intuitive and comply with ISO 9241 standards.
+    - Related quality attribute(s): Usability, Standard Compliance
+
+34. **[NFR-034]:**
+    - CCTNS must provide text equivalents for non-text media objects.
+    - Related quality attribute(s): Accessibility, Usability
+
+35. **[NFR-035]:**
+    - Navigation must be self-descriptive, showing users their location and navigation options.
+    - Related quality attribute(s): Usability, Navigation
+
+36. **[NFR-036]:**
+    - Navigation steps must be minimized, considering user tasks and strategies.
+    - Related quality attribute(s): Usability, Efficiency
+
+37. **[NFR-037]:**
+    - Splash screens must be avoided unless providing useful content or feedback.
+    - Related quality attribute(s): Usability, Efficiency
+
+38. **[NFR-038]:**
+    - Additional windows must only open if supporting user tasks.
+    - Related quality attribute(s): Usability, Efficiency
+
+39. **[NFR-039]:**
+    - Important information must be placed at the top of pages, with links to further content.
+    - Related quality attribute(s): Usability, Efficiency
+
+40. **[NFR-040]:**
+    - Horizontal scrolling must be avoided.
+    - Related quality attribute(s): Usability, Efficiency
+
+41. **[NFR-041]:**
+    - User interfaces must support input device independence.
+    - Related quality attribute(s): Accessibility, Usability
+
+42. **[NFR-042]:**
+    - User interfaces must be robust against changing technology.
+    - Related quality attribute(s): Maintainability, Flexibility
+
+43. **[NFR-043]:**
+    - Pages must have acceptable opening and download times.
+    - Related quality attribute(s): Performance, Efficiency
+
+44. **[NFR-044]:**
+    - User errors and recovery efforts must be minimized.
+    - Related quality attribute(s): Usability, Reliability
+
+45. **[NFR-045]:**
+    - Error messages must be clear, stating reasons and possible resolutions.
+    - Related quality attribute(s): Usability, Supportability
+
+46. **[NFR-046]:**
+    - Interfaces must use appropriate formats, units, and currency.
+    - Related quality attribute(s): Usability, Localization
+
+47. **[NFR-047]:**
+    - Text must be resizable by users.
+    - Related quality attribute(s): Accessibility, Usability
+
+48. **[NFR-048]:**
+    - Text quality must be sufficient for readability.
+    - Related quality attribute(s): Usability, Accessibility
+
+49. **[NFR-049]:**
+    - Textual content must support reading and understanding through suitable means.
+    - Related quality attribute(s): Usability, Accessibility
+
+50. **[NFR-050]:**
+    - Text skimming must be supported with clear links, lists, and headings.
+    - Related quality attribute(s): Usability, Efficiency
+
+51. **[NFR-051]:**
+    - Text readability must consider display characteristics and spatial arrangement.
+    - Related quality attribute(s): Usability, Accessibility
+
+52. **[NFR-052]:**
+    - Links must be formatted to avoid impeding text readability.
+    - Related quality attribute(s): Usability, Accessibility
+
+53. **[NFR-053]:**
+    - Navigation links must use familiar terminology and descriptive labels.
+    - Related quality attribute(s): Usability, Navigation
+
+54. **[NFR-054]:**
+    - Links opening new windows must be clearly marked.
+    - Related quality attribute(s): Usability, Navigation
+
+55. **[NFR-055]:**
+    - Navigation links must be distinguishable from controls.
+    - Related quality attribute(s): Usability, Navigation
+
+56. **[NFR-056]:**
+    - Printable document versions must be provided for unsuitable online reading.
+    - Related quality attribute(s): Usability, Accessibility
+
+57. **[NFR-057]:**
+    - "White space" must be used to organize content without impairing skimming.
+    - Related quality attribute(s): Usability, Readability
+
+58. **[NFR-058]:**
+    - Page lengths must support the primary purpose and use of the page.
+    - Related quality attribute(s): Usability, Efficiency
+
+59. **[NFR-059]:**
+    - Color must be used with care, not as the only means of conveying information.
+    - Related quality attribute(s): Usability, Accessibility
+
+60. **[NFR-060]:**
+    - Frames must be used with care, with alternatives provided.
+    - Related quality attribute(s): Usability, Accessibility
+
+61. **[NFR-061]:**
+    - Text-only page alternatives must be available if style sheets or frames are off.
+    - Related quality attribute(s): Usability, Accessibility
+
+62. **[NFR-062]:**
+    - Page layout must be consistent across pages.
+    - Related quality attribute(s): Usability, Consistency
+
+63. **[NFR-063]:**
+    - Page titles must be consistently placed.
+    - Related quality attribute(s): Usability, Consistency
+
+64. **[NFR-064]:**
+    - Human perception principles must be considered in page design.
+    - Related quality attribute(s): Usability, Accessibility
+
+65. **[NFR-065]:**
+    - Each page must link back to the home page or a landmark page.
+    - Related quality attribute(s): Usability, Navigation
+
+66. **[NFR-066]:**
+    - A site map must be provided for navigation overview.
+    - Related quality attribute(s): Usability, Navigation
+
+67. **[NFR-067]:**
+    - Navigation components must be consistent with content and placement.
+    - Related quality attribute(s): Usability, Consistency
+
+68. **[NFR-068]:**
+    - User adaptation must be considered for accessibility.
+    - Related quality attribute(s): Accessibility, Usability
+
+69. **[NFR-069]:**
+    - User tasks and information needs must guide access paths and navigation structures.
+    - Related quality attribute(s): Usability, Efficiency
+
+70. **[NFR-070]:**
+    - Individualization and adaptation must be evident to users.
+    - Related quality attribute(s): Usability, Flexibility
+
+71. **[NFR-071]:**
+    - User profiles must be evident and modifiable by users.
+    - Related quality attribute(s): Usability, Flexibility
+
+72. **[NFR-072]:**
+    - CCTNS must be available to users during specified hours and days.
+    - Related quality attribute(s): Availability, Reliability
+
+73. **[NFR-073]:**
+    - Planned downtime must not exceed specified hours per rolling three-month period.
+    - Related quality attribute(s): Availability, Reliability
+
+74. **[NFR-074]:**
+    - Unplanned downtime must not exceed specified hours/minutes per rolling three-month period.
+    - Related quality attribute(s): Availability, Reliability
+
+75. **[NFR-075]:**
+    - CCTNS must be restorable within specified hours after failure.
+    - Related quality attribute(s): Reliability, Recoverability
+
+76. **[NFR-076]:**
+    - CCTNS must provide adequate response times under standard and peak conditions.
+    - Related quality attribute(s): Performance, Efficiency
+
+77. **[NFR-077]:**
+    - Simple searches must complete within 5-8 seconds, advanced searches within 10-15 seconds.
+    - Related quality attribute(s): Performance, Efficiency
+
+78. **[NFR-078]:**
+    - Recently accessed cases must be retrievable within 5-8 seconds.
+    - Related quality attribute(s): Performance, Efficiency
+
+79. **[NFR-079]:**
+    - Infrequently accessed cases must be retrievable within 20 seconds.
+    - Related quality attribute(s): Performance, Efficiency
+
+80. **[NFR-080]:**
+    - CCTNS must be scalable for varying police station sizes and case numbers.
+    - Related quality attribute(s): Scalability, Flexibility
+
+81. **[NFR-081]:**
+    - CCTNS must support multilingual interfaces.
+    - Related quality attribute(s): Usability, Localization
+
+82. **[NFR-082]:**
+    - CCTNS must prevent data loss during equipment or network failures.
+    - Related quality attribute(s): Reliability, Integrity
+
+83. **[NFR-083]:**
+    - CCTNS must function offline with critical functionality.
+    - Related quality attribute(s): Availability, Reliability
+
+84. **[NFR-084]:**
+    - CCTNS must perform satisfactorily on low-bandwidth connections.
+    - Related quality attribute(s): Performance, Efficiency
+
+85. **[NFR-085]:**
+    - CCTNS must be implemented using Service Oriented Architecture (SOA) and modular design.
+    - Related quality attribute(s): Maintainability, Flexibility
+
+86. **[NFR-086]:**
+    - CCTNS must be developed on Open Standards.
+    - Related quality attribute(s): Interoperability, Flexibility
+
+87. **[NFR-087]:**
+    - CCTNS must use a common User Access and Authentication Service for Single-Sign On.
+    - Related quality attribute(s): Security, Usability
+
+88. **[NFR-088]:**
+    - CCTNS must be developed for centralized deployment and maintenance.
+    - Related quality attribute(s): Maintainability, Efficiency
+
+89. **[NFR-089]:**
+    - CCTNS must be deployed in a 3-tier datacenter architecture.
+    - Related quality attribute(s): Scalability, Flexibility
+
+90. **[NFR-090]:**
+    - CCTNS must have an n-tier architecture separating presentation, business, and data-access logic.
+    - Related quality attribute(s): Maintainability, Scalability
+
+91. **[NFR-091]:**
+    - CCTNS must be extensible for access through PDAs and mobile data terminals.
+    - Related quality attribute(s): Flexibility, Accessibility
+
+92. **[NFR-092]:**
+    - CCTNS must adopt standardized formats and common metadata elements.
+    - Related quality attribute(s): Interoperability, Consistency
+
+93. **[NFR-093]:**
+    - CCTNS must be accessible through browser-based systems with minimal client device requirements.
+    - Related quality attribute(s): Accessibility, Usability
+
+94. **[NFR-094]:**
+    - CCTNS must support multiple communication services for remote access.
+    - Related quality attribute(s): Accessibility, Flexibility
+
+95. **[NFR-095]:**
+    - CCTNS must support public access to a subset of data and functionality.
+    - Related quality attribute(s): Accessibility, Security
+
+96. **[NFR-096]:**
+    - CCTNS must support multi-tier authentication where required.
+    - Related quality attribute(s): Security, Access Control
+
+97. **[NFR-097]:**
+    - CCTNS must support SSL encrypted connections and secure VPN connections.
+    - Related quality attribute(s): Security, Integrity
+
+98. **[NFR-098]:**
+    - CCTNS must use HTTPS for secure communication.
+    - Related quality attribute(s): Security, Integrity
+
+99. **[NFR-099]:**
+    - CCTNS must run on multiple browsers.
+    - Related quality attribute(s): Compatibility, Flexibility
+
+100. **[NFR-100]:**
+    - CCTNS must support selective encryption of stored data.
+    - Related quality attribute(s): Security, Integrity
+
+101. **[NFR-101]:**
+    - CCTNS must ensure secure data transmission using SSL and 2-way digital signatures.
+    - Related quality attribute(s): Security, Integrity
+
+102. **[NFR-102]:**
+    - CCTNS must prevent cross-site scripting, SQL Injection, and use parameterized queries.
+    - Related quality attribute(s): Security, Integrity
+
+103. **[NFR-103]:**
+    - CCTNS must sanitize user inputs and validate incoming data.
+    - Related quality attribute(s): Security, Integrity
+
+104. **[NFR-104]:**
+    - CCTNS must encode incoming data and validate data at both client and server.
+    - Related quality attribute(s): Security, Integrity
+
+105. **[NFR-105]:**
+    - CCTNS must perform soft tagging for deletion instead of hard delete.
+    - Related quality attribute(s): Security, Integrity
+
+106. **[NFR-106]:**
+    - CCTNS must use caching for frequent data to ensure scalability and performance.
+    - Related quality attribute(s): Performance, Scalability
+
+107. **[NFR-107]:**
+    - CCTNS must use AJAX technology to improve user experience.
+    - Related quality attribute(s): Usability, Performance
+
+108. **[NFR-108]:**
+    - CCTNS must leverage Asynchronous HTTP socket capabilities for scalability and performance.
+    - Related quality attribute(s): Performance, Scalability
+
+109. **[NFR-109]:**
+    - CCTNS must host static content on the web server.
+    - Related quality attribute(s): Performance, Efficiency
+
+110. **[NFR-110]:**
+    - Search results must be fetched in batches of 10 or 
